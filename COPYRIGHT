@@ -21,3 +21,12 @@ with this program (the LICENSE file). If not, see
 
 The names and logos "Nodedr", "Nodedr OrderRestro" and "OrderRestro" are not
 licensed by the AGPL; see TRADEMARK_POLICY.md.
+
+MODIFIED VERSION - AutoPend POS (AGPL-3.0 section 5(a) notice)
+This is a modified version of the program above, maintained by AutoPend
+(Kartikey Gupta, hello@autopend.com, https://autopend.com). The original
+copyright notices above are kept unchanged and remain with their holders.
+First modified 2026-11-06. The changes are listed in AUTOPEND-CHANGES.md.
+Source of this modified version: https://github.com/kartikeygupta8/autopend-restaurant-pos
+AutoPend POS is not the official Nodedr OrderRestro release and is not
+endorsed by Nodedr Infotech Private Limited or Raktim Ranjit.

@@ -1,8 +1,9 @@
 {
   "name": "@nodedr-restaurant/backend",
   "version": "0.0.1",
-  "description": "Nodedr OrderRestro API",
-  "author": "Raktim Ranjit <mail@raktimranjit.com> (https://github.com/Raktim94)",
+  "description": "AutoPend POS API",
+  "author": "AutoPend <hello@autopend.com> (https://autopend.com)",
+  "contributors": ["Raktim Ranjit (original author of Nodedr OrderRestro) <mail@raktimranjit.com>"],
   "private": true,
   "license": "AGPL-3.0-only",
   "scripts": {

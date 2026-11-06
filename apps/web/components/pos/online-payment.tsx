@@ -84,7 +84,7 @@ export function OnlinePayment({ orderId, branchId, disabled }: { orderId: string
       {!pay || pay.status === "EXPIRED" || pay.status === "FAILED" ? (
         <>
           <p className="text-xs text-muted-foreground">
-            Makes a {active.name} page for the amount still due on this bill. The customer pays there; card details never reach OrderRestro.
+            Makes a {active.name} page for the amount still due on this bill. The customer pays there; card details never reach AutoPend POS.
           </p>
           {active.requiresCustomerPhone && (
             <div className="flex flex-col gap-1">

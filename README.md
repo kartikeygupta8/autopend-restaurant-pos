@@ -1,3 +1,9 @@
+> **AutoPend POS** is a modified version of Nodedr OrderRestro
+> (c) Nodedr Infotech Private Limited and Raktim Ranjit, used under the GNU AGPL-3.0.
+> Modified and maintained by AutoPend (Kartikey Gupta, hello@autopend.com).
+> Changes: see [AUTOPEND-CHANGES.md](AUTOPEND-CHANGES.md). Not the official release.
+> Original project: https://github.com/Raktim94/nodedr-restaurant-pos
+
 <div align="center">
 
 <img src="apps/web/public/brand-lockup.png" alt="Nodedr OrderRestro" width="520">

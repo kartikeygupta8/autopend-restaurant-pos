@@ -316,7 +316,7 @@ export default function IntegrationsPage() {
     <div className="flex flex-col gap-6">
       <div>
         <h1 className="text-[32px] font-semibold tracking-tight text-foreground">Settings</h1>
-        <p className="text-sm text-muted-foreground">Connect OrderRestro to the platforms you use</p>
+        <p className="text-sm text-muted-foreground">Connect AutoPend POS to the platforms you use</p>
       </div>
       <SettingsTabs />
 
