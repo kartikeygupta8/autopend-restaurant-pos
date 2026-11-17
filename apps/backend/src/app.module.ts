@@ -48,6 +48,7 @@ import { BackupModule } from './backup/backup.module';
 import { IntegrationsModule } from './integrations/integrations.module';
 import { McpModule } from './mcp/mcp.module';
 import { SystemModule } from './system/system.module';
+import { AutopendModule } from './autopend/autopend.module';
 import { VerifactuModule } from './modules/verifactu/verifactu.module';
 
 @Module({
@@ -98,6 +99,7 @@ import { VerifactuModule } from './modules/verifactu/verifactu.module';
     IntegrationsModule,
     McpModule,
     SystemModule,
+    AutopendModule,
   ],
   controllers: [AppController],
   providers: [

@@ -524,6 +524,19 @@ model Backup {
 // without requiring env-var/CasaOS config editing. Plaintext at rest — same
 // trust boundary as DATABASE_URL/JWT_SECRET already sitting in this app's
 // env — and never returned by the API after being set (masked in reads).
+// AutoPend hosting: this restaurant's subscription, set by the AutoPend admin portal. One row (id = 'singleton'),
+// absent on self-hosted installs, which are never restricted.
+model AutopendLicense {
+  id        String    @id @default("singleton")
+  status    String    @default("ACTIVE") // ACTIVE | SUSPENDED
+  expiresAt DateTime?
+  graceDays Int       @default(3)
+  message   String?
+  updatedAt DateTime  @updatedAt
+
+  @@map("autopend_license")
+}
+
 model BackupConfig {
   id              String   @id @default("singleton")
   endpoint        String

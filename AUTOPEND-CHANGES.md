@@ -20,3 +20,22 @@ headers, the `orderrestro-integration-secrets` encryption context, backup file n
 Docker/CasaOS/deb/Windows packaging files, upstream docs (ARCHITECTURE, ROADMAP, CONTRIBUTING, MAINTAINERS),
 `apps/web/app/docs/compliance-india/page.tsx` (describes the upstream's self-hosted model, needs a rewrite
 for AutoPend-hosted deployments), and the mobile app in `mobile/`.
+
+## 2026-11-17: AutoPend hosting controls (new, additive)
+
+Added so AutoPend can host many restaurants and manage them from its admin portal. Nothing here changes what a
+restaurant can do while its subscription is in order, and a server with no `AUTOPEND_ADMIN_KEY` and no licence
+record (every self-hosted install) behaves exactly as before.
+
+- `apps/backend/src/autopend/` (new module):
+  - `GET /api/v1/autopend/stats`: the restaurant's own numbers (orders and revenue today / 7 / 30 days, open orders,
+    staff, tables, menu items, last activity, version). No customer, staff or payment details are included.
+  - `GET|PUT /api/v1/autopend/license`: the portal sets whether the subscription is active, its end date and grace days.
+  - Both need the `X-AutoPend-Key` header to match `AUTOPEND_ADMIN_KEY` (32+ characters, compared in constant time).
+    Without the variable the routes answer 404.
+  - `GET /api/v1/license-status`: any signed-in person can see whether the subscription needs attention.
+  - A global guard that, only when a licence says the account is suspended or past its grace period, refuses requests
+    that change data with HTTP 402. Reading, exporting, signing in and payment-gateway notices keep working.
+    If the licence cannot be read the request is allowed.
+- `apps/backend/prisma/`: new table `autopend_license` (one row) and its migration.
+- `apps/web/components/layout/license-banner.tsx`: a banner shown to staff when the subscription is ending or inactive.
